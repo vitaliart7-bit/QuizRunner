@@ -7,6 +7,7 @@ from typing import List,Optional
 class Choice:
   text: str
   is_correct: bool
+  id: Optional[int] = None
 
 
 @dataclass
@@ -14,6 +15,7 @@ class Choice:
 class Question:
   text: str
   choices: List[Choice] = field(default_factory=list)
+  id: Optional[int] = None
 
 
 @dataclass
@@ -21,4 +23,5 @@ class Question:
 class TestSet:
   title: str
   description: Optional[str] = ""
-  quiestions: List[Question] = field(default_factory=list)
+  questions: List[Question] = field(default_factory=list)
+  id: Optional[int] = None
